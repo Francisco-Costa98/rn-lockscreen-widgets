@@ -12,6 +12,15 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		4BEEDF9A2979548E00A8264D /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BEEDF992979548D00A8264D /* WidgetKit.framework */; };
+		4BEEDF9C2979548E00A8264D /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BEEDF9B2979548E00A8264D /* SwiftUI.framework */; };
+		4BEEDF9F2979548E00A8264D /* lockscreenWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEEDF9E2979548E00A8264D /* lockscreenWidgetBundle.swift */; };
+		4BEEDFA12979548E00A8264D /* lockscreenWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEEDFA02979548E00A8264D /* lockscreenWidgetLiveActivity.swift */; };
+		4BEEDFA32979548E00A8264D /* lockscreenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEEDFA22979548E00A8264D /* lockscreenWidget.swift */; };
+		4BEEDFA62979549200A8264D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BEEDFA52979549200A8264D /* Assets.xcassets */; };
+		4BEEDFA82979549200A8264D /* lockscreenWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 4BEEDFA42979548E00A8264D /* lockscreenWidget.intentdefinition */; };
+		4BEEDFA92979549200A8264D /* lockscreenWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 4BEEDFA42979548E00A8264D /* lockscreenWidget.intentdefinition */; };
+		4BEEDFAC2979549200A8264D /* lockscreenWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4BEEDF982979548D00A8264D /* lockscreenWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7699B88040F8A987B510C191 /* libPods-RNlockscreenWidgets-RNlockscreenWidgetsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-RNlockscreenWidgets-RNlockscreenWidgetsTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -24,7 +33,28 @@
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = RNlockscreenWidgets;
 		};
+		4BEEDFAA2979549200A8264D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BEEDF972979548D00A8264D;
+			remoteInfo = lockscreenWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4BEEDFAD2979549200A8264D /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4BEEDFAC2979549200A8264D /* lockscreenWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		00E356EE1AD99517003FC87E /* RNlockscreenWidgetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RNlockscreenWidgetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +68,17 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RNlockscreenWidgets/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-RNlockscreenWidgets-RNlockscreenWidgetsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNlockscreenWidgets-RNlockscreenWidgetsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-RNlockscreenWidgets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNlockscreenWidgets.debug.xcconfig"; path = "Target Support Files/Pods-RNlockscreenWidgets/Pods-RNlockscreenWidgets.debug.xcconfig"; sourceTree = "<group>"; };
+		4B0CB1D329AFA7F800261EEF /* RNlockscreenWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = RNlockscreenWidgets.entitlements; path = RNlockscreenWidgets/RNlockscreenWidgets.entitlements; sourceTree = "<group>"; };
+		4B0CB1D429AFBA2800261EEF /* lockscreenWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = lockscreenWidgetExtension.entitlements; sourceTree = "<group>"; };
+		4BEEDF982979548D00A8264D /* lockscreenWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = lockscreenWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BEEDF992979548D00A8264D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		4BEEDF9B2979548E00A8264D /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		4BEEDF9E2979548E00A8264D /* lockscreenWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lockscreenWidgetBundle.swift; sourceTree = "<group>"; };
+		4BEEDFA02979548E00A8264D /* lockscreenWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lockscreenWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		4BEEDFA22979548E00A8264D /* lockscreenWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lockscreenWidget.swift; sourceTree = "<group>"; };
+		4BEEDFA42979548E00A8264D /* lockscreenWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = lockscreenWidget.intentdefinition; sourceTree = "<group>"; };
+		4BEEDFA52979549200A8264D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4BEEDFA72979549200A8264D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-RNlockscreenWidgets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNlockscreenWidgets.release.xcconfig"; path = "Target Support Files/Pods-RNlockscreenWidgets/Pods-RNlockscreenWidgets.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-RNlockscreenWidgets-RNlockscreenWidgetsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNlockscreenWidgets-RNlockscreenWidgetsTests.debug.xcconfig"; path = "Target Support Files/Pods-RNlockscreenWidgets-RNlockscreenWidgetsTests/Pods-RNlockscreenWidgets-RNlockscreenWidgetsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-RNlockscreenWidgets.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNlockscreenWidgets.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +101,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C80B921A6F3F58F76C31292 /* libPods-RNlockscreenWidgets.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BEEDF952979548D00A8264D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BEEDF9C2979548E00A8264D /* SwiftUI.framework in Frameworks */,
+				4BEEDF9A2979548E00A8264D /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +136,7 @@
 		13B07FAE1A68108700A75B9A /* RNlockscreenWidgets */ = {
 			isa = PBXGroup;
 			children = (
+				4B0CB1D329AFA7F800261EEF /* RNlockscreenWidgets.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -102,8 +153,23 @@
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				5DCACB8F33CDC322A6C60F78 /* libPods-RNlockscreenWidgets.a */,
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-RNlockscreenWidgets-RNlockscreenWidgetsTests.a */,
+				4BEEDF992979548D00A8264D /* WidgetKit.framework */,
+				4BEEDF9B2979548E00A8264D /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4BEEDF9D2979548E00A8264D /* lockscreenWidget */ = {
+			isa = PBXGroup;
+			children = (
+				4BEEDF9E2979548E00A8264D /* lockscreenWidgetBundle.swift */,
+				4BEEDFA02979548E00A8264D /* lockscreenWidgetLiveActivity.swift */,
+				4BEEDFA22979548E00A8264D /* lockscreenWidget.swift */,
+				4BEEDFA42979548E00A8264D /* lockscreenWidget.intentdefinition */,
+				4BEEDFA52979549200A8264D /* Assets.xcassets */,
+				4BEEDFA72979549200A8264D /* Info.plist */,
+			);
+			path = lockscreenWidget;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -116,9 +182,11 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				4B0CB1D429AFBA2800261EEF /* lockscreenWidgetExtension.entitlements */,
 				13B07FAE1A68108700A75B9A /* RNlockscreenWidgets */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* RNlockscreenWidgetsTests */,
+				4BEEDF9D2979548E00A8264D /* lockscreenWidget */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
@@ -133,6 +201,7 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* RNlockscreenWidgets.app */,
 				00E356EE1AD99517003FC87E /* RNlockscreenWidgetsTests.xctest */,
+				4BEEDF982979548D00A8264D /* lockscreenWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,15 +253,34 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
 				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				4BEEDFAD2979549200A8264D /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4BEEDFAB2979549200A8264D /* PBXTargetDependency */,
 			);
 			name = RNlockscreenWidgets;
 			productName = RNlockscreenWidgets;
 			productReference = 13B07F961A680F5B00A75B9A /* RNlockscreenWidgets.app */;
 			productType = "com.apple.product-type.application";
+		};
+		4BEEDF972979548D00A8264D /* lockscreenWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BEEDFB02979549200A8264D /* Build configuration list for PBXNativeTarget "lockscreenWidgetExtension" */;
+			buildPhases = (
+				4BEEDF942979548D00A8264D /* Sources */,
+				4BEEDF952979548D00A8264D /* Frameworks */,
+				4BEEDF962979548D00A8264D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = lockscreenWidgetExtension;
+			productName = lockscreenWidgetExtension;
+			productReference = 4BEEDF982979548D00A8264D /* lockscreenWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -200,6 +288,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -208,6 +297,9 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1120;
+					};
+					4BEEDF972979548D00A8264D = {
+						CreatedOnToolsVersion = 14.2;
 					};
 				};
 			};
@@ -226,6 +318,7 @@
 			targets = (
 				13B07F861A680F5B00A75B9A /* RNlockscreenWidgets */,
 				00E356ED1AD99517003FC87E /* RNlockscreenWidgetsTests */,
+				4BEEDF972979548D00A8264D /* lockscreenWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -244,6 +337,14 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BEEDF962979548D00A8264D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BEEDFA62979549200A8264D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +515,18 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				4BEEDFA92979549200A8264D /* lockscreenWidget.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BEEDF942979548D00A8264D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BEEDF9F2979548E00A8264D /* lockscreenWidgetBundle.swift in Sources */,
+				4BEEDFA82979549200A8264D /* lockscreenWidget.intentdefinition in Sources */,
+				4BEEDFA12979548E00A8264D /* lockscreenWidgetLiveActivity.swift in Sources */,
+				4BEEDFA32979548E00A8264D /* lockscreenWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +537,11 @@
 			isa = PBXTargetDependency;
 			target = 13B07F861A680F5B00A75B9A /* RNlockscreenWidgets */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+		4BEEDFAB2979549200A8264D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4BEEDF972979548D00A8264D /* lockscreenWidgetExtension */;
+			targetProxy = 4BEEDFAA2979549200A8264D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -483,9 +601,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-RNlockscreenWidgets.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = RNlockscreenWidgets/RNlockscreenWidgets.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9KWAD937R3;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = RNlockscreenWidgets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -510,9 +631,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-RNlockscreenWidgets.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = RNlockscreenWidgets/RNlockscreenWidgets.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9KWAD937R3;
 				INFOPLIST_FILE = RNlockscreenWidgets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -528,6 +652,88 @@
 				PRODUCT_NAME = RNlockscreenWidgets;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		4BEEDFAE2979549200A8264D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = lockscreenWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 9KWAD937R3;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = lockscreenWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = lockscreenWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.RNlockscreenWidgets.lockscreenWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4BEEDFAF2979549200A8264D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = lockscreenWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 9KWAD937R3;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = lockscreenWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = lockscreenWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.RNlockscreenWidgets.lockscreenWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -685,6 +891,15 @@
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BEEDFB02979549200A8264D /* Build configuration list for PBXNativeTarget "lockscreenWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BEEDFAE2979549200A8264D /* Debug */,
+				4BEEDFAF2979549200A8264D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
