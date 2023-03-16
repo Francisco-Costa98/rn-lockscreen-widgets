@@ -11,15 +11,19 @@ import Intents
 
 struct WidgetData: Decodable {
    var text: String
+   var minGaugeVal: Double
+   var maxGaugeVal: Double
+   var currentGaugeVal: Double
+   var icon: String?
 }
 
 struct Provider: IntentTimelineProvider {
   func placeholder(in context: Context) -> StatusEntry {
-    StatusEntry(date: Date(), fakeStatus: "Hello from 1", configuration: ConfigurationIntent())
+    StatusEntry(date: Date(), text: "Text goes here", configuration: ConfigurationIntent(), minGaugeVal: 0, maxGaugeVal: 100, currentGaugeVal: 50, icon: "waveform")
   }
   
   func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (StatusEntry) -> ()) {
-    let entry = StatusEntry(date: Date(), fakeStatus: "Hello from 2", configuration: configuration)
+    let entry = StatusEntry(date: Date(), text: "Text goes here", configuration: configuration, minGaugeVal: 0, maxGaugeVal: 100, currentGaugeVal: 50, icon: "waveform")
     completion(entry)
   }
   
@@ -34,7 +38,7 @@ struct Provider: IntentTimelineProvider {
         if let parsedData = try? decoder.decode(WidgetData.self, from: data!) {
           print("Data parsed")
           let nextRefresh = Calendar.current.date(byAdding: .minute, value: 3, to: entryDate)!
-          let entry = StatusEntry(date: nextRefresh, fakeStatus: parsedData.text, configuration: configuration)
+          let entry = StatusEntry(date: nextRefresh, text: parsedData.text, configuration: configuration, minGaugeVal: parsedData.minGaugeVal, maxGaugeVal: parsedData.maxGaugeVal, currentGaugeVal: parsedData.currentGaugeVal, icon: parsedData.icon ?? "waveform")
           let timeline = Timeline(entries: [entry], policy: .atEnd)
           completion(timeline)
         } else {
@@ -42,7 +46,7 @@ struct Provider: IntentTimelineProvider {
         }
       } else {
         let nextRefresh = Calendar.current.date(byAdding: .minute, value: 3, to: entryDate)!
-        let entry = StatusEntry(date: nextRefresh, fakeStatus: "No data set", configuration: configuration)
+        let entry = StatusEntry(date: nextRefresh, text: "No data set", configuration: configuration, minGaugeVal: 0, maxGaugeVal: 100, currentGaugeVal: 50, icon: "waveform")
         let timeline = Timeline(entries: [entry], policy: .atEnd)
         completion(timeline)
       }
@@ -51,25 +55,84 @@ struct Provider: IntentTimelineProvider {
 }
 
 struct StatusEntry: TimelineEntry {
-    let date: Date
-    let fakeStatus: String
-    let configuration: ConfigurationIntent
+  var date: Date
+  
+  let text: String
+  let configuration: ConfigurationIntent
+  let minGaugeVal: Double
+  let maxGaugeVal: Double
+  let currentGaugeVal: Double
+  let icon: String
 }
 
-struct lockscreenWidgetEntryView : View {
-    var entry: Provider.Entry
-  
-    @ViewBuilder
+struct circularGaugeWidgetView: View {
+  var currVal : Double
+  var minVal :Double
+  var maxVal : Double
+  var icon: String
+  @ViewBuilder
   var body: some View {
-    VStack(alignment: .leading) {
-      Text(entry.date, style: .time )
-      Spacer()
+      Gauge(value: currVal, in: minVal...maxVal) {
+      } currentValueLabel: {
+        Image(systemName: icon).font(.caption)
+      } minimumValueLabel: {
+        Text("\(Int(minVal))")
+          .foregroundColor(Color.green)
+      } maximumValueLabel: {
+        Text("\(Int(maxVal))")
+          .foregroundColor(Color.red)
+      }
+      .gaugeStyle( .accessoryCircular)}
+}
 
-      Text(entry.fakeStatus )
+struct rectangularGaugeWidgetView: View {
+  var currVal : Double
+  var minVal :Double
+  var maxVal : Double
+  var icon: String
+  var text: String
+  
+  @ViewBuilder
+  var body: some View {
+  
+        Gauge(value: currVal, in: minVal...maxVal) {
+          Text(text)
+            .scaledToFill()
+            .minimumScaleFactor(0.5)
+        } currentValueLabel: {
+          HStack{
+            Image(systemName: icon)
+            Text("\(Int(currVal))")
+          }.font(.caption)
+        }minimumValueLabel: {
+          Text("\(Int(minVal))")
+            .foregroundColor(Color.green)
+        } maximumValueLabel: {
+          Text("\(Int(maxVal))")
+            .foregroundColor(Color.red)
+        }
+        .gaugeStyle(.accessoryLinearCapacity)
+        .padding()
+      }}
+
+struct lockscreenWidgetEntryView : View {
+  var entry: Provider.Entry
+  
+  // Obtain the widget family value
+  @Environment(\.widgetFamily)
+  var family
+  
+  @ViewBuilder
+  var body: some View {
+    switch family {
+    case .accessoryCircular :
+      circularGaugeWidgetView(currVal: entry.currentGaugeVal, minVal: entry.minGaugeVal, maxVal: entry.maxGaugeVal, icon: entry.icon);
+    case .accessoryRectangular:
+      rectangularGaugeWidgetView(currVal: entry.currentGaugeVal, minVal: entry.minGaugeVal, maxVal: entry.maxGaugeVal, icon: entry.icon, text: entry.text);
+    default:
+        Text("Not supported for this view")
     }
-    .padding(7.0)
   }
-
 }
 
 struct lockscreenWidget: Widget {
@@ -88,7 +151,7 @@ struct lockscreenWidget: Widget {
 
 struct lockscreenWidget_Previews: PreviewProvider {
     static var previews: some View {
-        lockscreenWidgetEntryView(entry: StatusEntry(date: Date(), fakeStatus: "Mo was hefsdfdsfdsfdsfre", configuration: ConfigurationIntent()))
+        lockscreenWidgetEntryView(entry: StatusEntry(date: Date(), text: "Mo was here", configuration: ConfigurationIntent(), minGaugeVal: 0, maxGaugeVal: 100, currentGaugeVal: 50, icon: "waveform"))
         .previewContext(WidgetPreviewContext(family: .systemSmall)
           
         )

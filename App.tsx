@@ -7,6 +7,7 @@
 
 import React, {useState} from 'react';
 import {
+  Button,
   SafeAreaView,
   StatusBar,
   StyleSheet,
@@ -29,6 +30,10 @@ function App(): JSX.Element {
 
   const widgetData = {
     text,
+    minGaugeVal: 0,
+    maxGaugeVal: 100,
+    currentGaugeVal: 80,
+    icon: 'scooter',
   };
 
   const handleSubmit = async () => {
@@ -52,9 +57,9 @@ function App(): JSX.Element {
         onChangeText={newText => setText(newText)}
         value={text}
         returnKeyType="send"
-        onEndEditing={handleSubmit}
         placeholder="Enter the text to display..."
       />
+      <Button onPress={handleSubmit} title="set props" />
     </SafeAreaView>
   );
 }
